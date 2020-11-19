@@ -44,7 +44,7 @@ public class Main {
 
     private static void initializeDB(Statement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery("SELECT * FROM books;");
-        if(!resultSet.next() == false){
+        if(resultSet.next() == false){
             String query1 = "INSERT INTO books (title,author,release_year) VALUES ('Dziady','Adam Mickiewicz','2010')";
             statement.executeUpdate(query1);
             String query2 = "INSERT INTO books (title,author,release_year) VALUES ('Pan Tadeusz','Adam Mickiewicz','1997')";
